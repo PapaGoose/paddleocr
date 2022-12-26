@@ -6,7 +6,7 @@ RUN pip3.7 install --upgrade pip -i https://mirror.baidu.com/pypi/simple
 
 RUN pip3.7 install paddlehub --upgrade -i https://mirror.baidu.com/pypi/simple
 
-RUN git clone https://github.com/PaddlePaddle/PaddleOCR.git /PaddleOCR
+RUN git clone https://github.com/PapaGoose/paddleocr.git /PaddleOCR
 
 WORKDIR /PaddleOCR
 
@@ -27,4 +27,4 @@ RUN tar xf /PaddleOCR/inference/cyrillic_PP-OCRv3_rec_infer.tar -C /PaddleOCR/in
 
 EXPOSE 8868
 
-CMD ["/bin/bash","-c","hub install deploy/hubserving/ocr_system/ && hub serving start -m ocr_system"]
+CMD ["/bin/bash","-c","hub install deploy/hubserving/ocr_system/ && hub serving start -m ocr_system --port 8866"]
