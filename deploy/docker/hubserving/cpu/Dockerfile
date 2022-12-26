@@ -27,4 +27,4 @@ RUN tar xf /PaddleOCR/inference/cyrillic_PP-OCRv3_rec_infer.tar -C /PaddleOCR/in
 
 EXPOSE 8868
 
-CMD ["/bin/bash","-c","hub install deploy/hubserving/ocr_system/ && hub serving start -m ocr_system --port 8866"]
+CMD ["/bin/bash","-c","hub install deploy/hubserving/ocr_system/ && hub serving start -m ocr_system --port 8868"]
