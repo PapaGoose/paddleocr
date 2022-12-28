@@ -50,7 +50,7 @@ def read_params():
     cfg.rec_batch_num = 6
     cfg.max_text_length = 25
 
-    cfg.rec_char_dict_path = "./ppocr/utils/ppocr_keys_v1.txt"
+    cfg.rec_char_dict_path = "./ppocr/utils/dict/cyrillic_dict.txt"
     cfg.use_space_char = True
 
     #params for text classifier
