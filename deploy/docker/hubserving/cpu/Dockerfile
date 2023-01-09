@@ -10,6 +10,8 @@ RUN git clone https://github.com/PapaGoose/paddleocr.git /PaddleOCR
 
 WORKDIR /PaddleOCR
 
+RUN cat deploy/hubserving/ocr_system/params.py
+
 RUN pip3.7 install -r requirements.txt -i https://mirror.baidu.com/pypi/simple
 
 RUN mkdir -p /PaddleOCR/inference/
@@ -27,5 +29,4 @@ RUN tar xf /PaddleOCR/inference/cyrillic_PP-OCRv3_rec_infer.tar -C /PaddleOCR/in
 
 EXPOSE 8868
 
-# CMD ["/bin/bash","-c","hub install deploy/hubserving/ocr_system/ && hub serving start -m ocr_system --port 8868"]
-CMD ["/bin/bash", "cat /PaddleOCR/deploy/hubserving/ocr_system/params.py"]
+CMD ["/bin/bash","-c","hub install deploy/hubserving/ocr_system/ && hub serving start -m ocr_system --port 8868"]
